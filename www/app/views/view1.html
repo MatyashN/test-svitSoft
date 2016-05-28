@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table class="table toDoTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Completed</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="task in tasks" ng-class="task.completed ? 'ready' : 'not-ready'">
+        <td>{{task.name}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.duedate}}</td>
+        <td><span ng-click="task.completed ? task.completed = false : task.completed = true"><i class="glyphicon glyphicon-ok"></i></span></td>
+        <td><a ng-click="editTask(task.id)"><i class="glyphicon glyphicon-pencil"></i></a></td>
+        <td><a ng-click="removeTask(task.id)"><i class="glyphicon glyphicon-remove"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
